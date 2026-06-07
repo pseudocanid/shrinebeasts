@@ -292,6 +292,12 @@
       display: block;
     }
 
+    .page a.plain-link {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -719,7 +725,6 @@
     }
 
     .tutorial-card .thumbnail {
-      width: 100%;
       height: 180px;
       object-fit: cover;
       background: linear-gradient(135deg, #f0e6e0, #e8dcd5);
@@ -729,9 +734,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     }
 
     .thumbnail-image img {
+      border-radius: var(--radius-lg);
       width: 100%;
       height: 180px;
       object-fit: cover;
@@ -784,7 +791,7 @@
     }
 
     .resources-section {
-      background: var(--color-card-bg);
+      background: rgba(255, 255, 255, 0.341);
       border-radius: var(--radius-lg);
       padding: 2.5rem;
       margin-top: 3rem;
@@ -833,7 +840,60 @@
       margin-bottom: 0.2rem;
     }
 
-    .resource-item .info span {
+    .resource-item .info p {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    .recommendations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      align-items: stretch; /* make cards fill row height */
+    }
+
+    .recommended-item {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--color-text);
+      transition: var(--transition-fast);
+      text-align: center;
+    }
+
+    .recommended-item img {
+      border-radius: 5%;
+      max-width:150px;
+      max-height:150px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .recommended-item:hover {
+      background: white;
+      transform: translateX(4px);
+    }
+
+    .recommended-item i {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      width: 40px;
+      text-align: center;
+    }
+
+    .recommended-item .info h5 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+   .recommended-item .info span {
       font-size: 0.85rem;
       color: var(--color-muted);
     }
@@ -1046,7 +1106,7 @@
         justify-content: space-between;
         padding: 0 1.25rem;
         height: var(--header-height);
-        background: var(--color-sidebar-bg);
+        background: #180909ee;
         backdrop-filter: blur(8px);
         position: sticky;
         top: 0;
@@ -1595,11 +1655,13 @@
       <div class="page-header">
         <h2>Tutorials</h2>
       </div>
-
+        <div class="section" id="patterns" style="margin-bottom: 0;">
+          <h3>PDF Sewing Patterns (A4 or 8.5x11")</h3>
+        </div>
       <div class="tutorials-grid">
-
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/810041788/easy-toony-puffy-hand-paw-basicsimple">
             <img src="https://i.etsystatic.com/7659443/r/il/fbeed1/3037736962/il_1140xN.3037736962_s579.jpg"
                 alt="Simple Handpaws" loading="lazy">
         </div>
@@ -1608,16 +1670,17 @@
             <span class="tag">Hands</span>
             <h4>Simple Handpaws</h4>
             <p>Simple, lined, 2-piece puffy handpaws. Cute round shape</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>1 Day</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/8_LYxW--TJA" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1130157008/easy-retro-hand-paw-basicsimple-pattern">
             <img src="https://i.etsystatic.com/7659443/r/il/c50342/3598143225/il_1140xN.3598143225_jg4p.jpg"
                 alt="Retro Handpaws" loading="lazy">
         </div>
@@ -1626,35 +1689,37 @@
             <span class="tag">Hands</span>
             <h4>Retro Handpaws</h4>
             <p>Simple, lined, 2-piece puffy handpaws reminiscent of old-school fursuits</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>1 Day</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/8_LYxW--TJA" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+                <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1031343657/stompy-feetpaw-pattern-digital">
             <img src="https://i.etsystatic.com/7659443/r/il/e0f9ba/3170451404/il_1140xN.3170451404_75p7.jpg"
-                alt="Stompy Feetpaws" loading="lazy">
+                alt="Stompy Feetpaws" loading="lazy" style="scale: 150%;">
         </div>
           <div class="content">
             <span class="tag">Intermediate</span>
             <span class="tag">Feet</span>
             <h4>Stompy Feetpaws</h4>
             <p>Easy to sew sockpaws (no shoe needed), also available in XL size. Cute rounded shape</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>2-3 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/uwKIbc0KVLM" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
-            <img src="https://i.etsystatic.com/7659443/r/il/0ceac5/3582634974/il_1140xN.3582634974_d24j.jpg"
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1139118218/slim-feetpaw-pattern-digital-pdftutorial">
+              <img src="https://i.etsystatic.com/7659443/r/il/0ceac5/3582634974/il_1140xN.3582634974_d24j.jpg"
                 alt="Slim Feetpaws" loading="lazy">
         </div>
           <div class="content">
@@ -1662,52 +1727,74 @@
             <span class="tag">Feet</span>
             <h4>Slim Feetpaws</h4>
             <p>Easy to sew sockpaws (no shoe needed). Standard shape</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>2-3 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/uwKIbc0KVLM" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tutorial-card" >
+          <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://shrinebeasts.itch.io/curly-tail-v1">
+              <img src="https://i.etsystatic.com/7659443/r/il/fc6379/2360598660/il_1140xN.2360598660_prhc.jpg"
+                  alt="Curly Tail v1" loading="lazy" style="scale: 110%;">
+          </div>
+          <div class="content">
+            <span class="tag">Beginner</span>
+            <span class="tag">Tail</span>
+            <h4>Curly Tail v1</h4>
+            <p>Very old pattern for a simple curly tail. Pattern available for free</p>
+            </a>
+            <div class="meta">
+              <span><i class="fa-solid fa-calendar-check"></i>1 Day</span>
+              <a target="_blank" href="https://shrinebeasts.itch.io/curly-tail-v1" style="color: green;"><span><i class="fa-solid fa-sack-dollar"></i>Free</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1086644791/curly-dog-tail-v2-pattern-digital">
             <img src="https://i.etsystatic.com/7659443/r/il/ede365/3338349474/il_1140xN.3338349474_ao2l.jpg"
-                alt="Curly Tail v2" loading="lazy">
+                alt="Curly Tail v2" loading="lazy" style="scale: 200%; padding-bottom: 20%; padding-right: 15%;">
         </div>
           <div class="content">
             <span class="tag">Intermediate</span>
             <span class="tag">Tail</span>
             <h4>Curly Tail v2</h4>
             <p>Large multi-piece curly tail for huskies/etc</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>1 Day</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/aLBqhB6OD-Y" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1305715543/floppy-shark-fish-tail-pattern-digital">
               <img src="https://i.etsystatic.com/7659443/r/il/73f22c/6417929162/il_1140xN.6417929162_48jr.jpg"
-                  alt="Floppy Shark Tail" loading="lazy">
+                  alt="Floppy Shark Tail" loading="lazy" style="scale: 120%;">
           </div>
           <div class="content">
             <span class="tag">Intermediate</span>
             <span class="tag">Tail</span>
             <h4>Floppy Shark Tail</h4>
             <p>Shark tail which flops downward like a regular tail, for sharks, sharkdogs, manokits, etc</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>2-3 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/zH0lE83shC8" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1462562019/upright-shark-fish-tail-pattern-digital">
             <img src="https://i.etsystatic.com/7659443/r/il/4e191f/6466943763/il_1140xN.6466943763_7qii.jpg"
                 alt="Upright Shark Tail" loading="lazy">
         </div>
@@ -1716,16 +1803,17 @@
             <span class="tag">Tail</span>
             <h4>Upright Shark Tail</h4>
             <p>Shark tail which projects outward (supported by PVC pole) for sharks, sharkdogs, manokits, etc</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>2-4 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/zH0lE83shC8" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1240295951/chunky-feline-hand-paw-pattern-digital">
             <img src="https://i.etsystatic.com/7659443/r/il/5193dc/3906767510/il_1140xN.3906767510_4gqq.jpg"
                 alt="Chunky Feline Paws" loading="lazy">
         </div>
@@ -1734,16 +1822,17 @@
             <span class="tag">Hands</span>
             <h4>Chunky Feline Paws</h4>
             <p>4-finger puffy paws with noticable thumb. Stylized chunky look</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>1-2 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/gE4kOu7aZOo" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1244865015/chunky-canine-hand-paw-pattern-digital">
             <img src="https://i.etsystatic.com/7659443/r/il/2770c6/3918358490/il_1140xN.3918358490_r9g4.jpg"
                 alt="Chunky Canine Paws" loading="lazy">
         </div>
@@ -1752,16 +1841,17 @@
             <span class="tag">Hands</span>
             <h4>Chunky Canine Paws</h4>
             <p>4-finger puffy paws. Stylized chunky look</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>1-2 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+            <a href="https://youtu.be/gE4kOu7aZOo" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card">
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1039832633/toony-hand-hoof-pattern-digital">
             <img src="https://i.etsystatic.com/7659443/r/il/1cea73/3213403279/il_1140xN.3213403279_fuq1.jpg"
                 alt="Toony Handhooves" loading="lazy">
         </div>
@@ -1770,33 +1860,36 @@
             <span class="tag">Hands</span>
             <h4>Toony Handhooves</h4>
             <p>Cloven hooves without thumbs, supported with foam interfacing. Cute oversized look</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>1-2 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/xd1_AX_8-uk" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
 
         <article class="tutorial-card" >
           <div class="thumbnail thumbnail-image">
+            <a target="_blank" href="https://pseudocanid.etsy.com/uk/listing/1111695171/bird-wingswing-arm-pattern-digital">
               <img src="https://i.etsystatic.com/7659443/r/il/63f600/3933584065/il_1140xN.3933584065_dzge.jpg"
-                  alt="Bird Wingarms" loading="lazy" >
+                  alt="Bird Wingarms" loading="lazy" style="scale: 170%; padding-top: 20%;">
           </div>
           <div class="content">
             <span class="tag">Intermediate</span>
             <span class="tag">Hands</span>
             <h4>Bird Wingarms</h4>
-            <p>Bird wings worn over the arms with thumbs for dexterity. Designed to be sewn to a bodysuit but easily altered to be armsleeves. Cute oversized look</p>
+            <p>Bird wings worn over the arms with thumbs for dexterity. Designed to be sewn to a bodysuit but easily altered to be armsleeves</p>
+            </a>
             <div class="meta">
               <span><i class="fa-solid fa-calendar-check"></i>2-4 Days</span>
-              <span><i class="fa-brands fa-youtube"></i> Video</span>
-              <span><i class="fa-regular fa-file"></i> PDF pattern</span>
+              <a href="https://youtu.be/TiUGvxzBjyc" target="_blank"><span><i class="fa-brands fa-youtube"></i> Video</span></a>
             </div>
           </div>
         </article>
+
       </div>
 
+<!--
       <div class="resources-section">
         <h3>Download-only Resources</h3>
         <div class="resources-grid">
@@ -1810,9 +1903,115 @@
               <span>PDF • Free</span>
             </div>
           </a>
-
         </div>
       </div>
+       -->
+
+      <div class="resources-section">
+        <h3>Material Recommendations (In personal use)</h3>
+        <div class="recommendations-grid">
+
+              <a href="https://s.click.aliexpress.com/e/_c4pP5n37" target="_blank" class="recommended-item">
+              <img src="//ae01.alicdn.com/kf/S7de6158060e242f191b922bee18cc4fbb.jpg_350x350.jpg" />
+              <div class="info">
+                <h5>Spacer Mesh</h5>
+                <span><p>For thick cooling lining</p>
+                <p>£7/m • 160cm width • 2-3mm thick • 200GSM</p>
+                <p>Thickness can stiffen flowy pieces, texture is 'itchy'</span></p>
+              </div>
+              </a>
+
+              <a href="https://s.click.aliexpress.com/e/_c3C5FkBP" target="_blank" class="recommended-item">
+              <img src="//ae01.alicdn.com/kf/Saa27329bbdb141a5af4a4bbd0408c9beU.jpg_350x350.jpg" />
+              <div class="info">
+                <h5>Sports Mesh</h5>
+                <span><p>For cooling lining</p>
+                <p>£8/m • 160cm width • 150GSM</p>
+                <p>Comfortable and breathable, but raw edges will fray</span></p>
+              </div>
+              </a>
+
+              <a href="https://s.click.aliexpress.com/e/_c3p6S9uH" target="_blank" class="recommended-item">
+              <img src="//ae01.alicdn.com/kf/Sb513b38868634e5c8813a9ef599ed2bfT.jpg_350x350.jpg" />
+              <div class="info">
+                <h5>Sewbato 1mm Crystal Minky</h5>
+                <span><p>For noses, teeth, tongues, inner-ears</p>
+                <p>£16/m • 150cm width</p>
+                <p>Non-stretch minky with mochi-like look (easier to sew)</span></p>
+              </div>
+              </a>
+
+              <a href="https://s.click.aliexpress.com/e/_c3AylmqV" target="_blank" class="recommended-item">
+              <img src="//ae01.alicdn.com/kf/S6811a03738b641878540c9c3953b1a44t.jpg_350x350.jpg" />
+              <div class="info">
+                <h5>Hopen 1mm Mochi Minky</h5>
+                <span><p>For noses, teeth, tongues, inner-ears</p>
+                <p>£16/m • 160cm width</p>
+                <p>Stretchy minky, can be difficult to sew</span></p>
+              </div>
+              </a>
+
+              <a href="https://www.aliexpress.com/store/1104035662" target="_blank" class="recommended-item">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S25f44eff8d334fd0aca9f78d7f61a2165.jpg_960x960q75.jpg" />
+              <div class="info">
+                <h5>Miemiefur</h5>
+                <span><p>Luxury Shag (3.5cm, 5cm) • Teddy (3cm) • Seal (1.5cm)</p>
+                <p>£44/yd • 160cm width • 625GSM</p>
+                <p>3.5cm lux shag is pretty good quality, EXCELLENT customer service and consistency. Do NOT shave 5cm lux shag</span></p>
+              </div>
+              </a>
+
+              <a href="https://s.click.aliexpress.com/e/_c4K3ZyTJ" target="_blank" class="recommended-item">
+              <img src="//ae01.alicdn.com/kf/HTB1qZ14FkOWBuNjSsppq6xPgpXaM.jpg_350x350.jpg" />
+              <div class="info">
+                <h5>Linda Wholesale 3.5cm Fox</h5>
+                <span><p>High-quality thick fox</p>
+                <p>£30-40/yd • 160cm width • 1000GSM</p>
+                <p>High density, dirt-repellent, anti-tangle. Can be shaved to face length. Mediocre customer service</span></p>
+                </div>
+              </a>
+
+              <a href="https://s.click.aliexpress.com/e/_c2uAPQfX" target="_blank" class="recommended-item">
+              <img src="//ae01.alicdn.com/kf/Sf59324f573f343fb9d898e6a39fa71ea6.jpg_350x350.jpg" />
+              <div class="info">
+                <h5>Linda Wholesale 5cm Fox</h5>
+                <span><p>High-quality thick fox</p>
+                <p>£30/yd • 180cm width • 725GSM</p>
+                <p>High density, dirt-repellent, anti-tangle. Can be shaved to face length. Mediocre customer service</span></p>
+              </div>
+              </a>
+
+              <a href="https://s.click.aliexpress.com/e/_c3OjmBVr" target="_blank" class="recommended-item">
+              <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9b9a80f272e74098b55572b9b80618ecl.jpg_960x960q75.jpg" />
+              <div class="info">
+                <h5>BaoRun P6 ("Sminiker") Shaver</h5>
+                <span><p>For shaving fur</p>
+                <p>£20 • Replacement Blades Available</p>
+                <p>Better than expensive shavers imo</span></p>
+              </div>
+              </a>
+
+              <a href="https://www.google.com/search?q=Brother+sewing+machine+simple" target="_blank" class="recommended-item">
+              <img src="https://media.4rgos.it/i/Argos/4602576_R_Z001A" />
+              <div class="info"> 
+                <h5>Beginner Sewing Machine</h5>
+                <span><p>£60-£90</p></span>
+                <span><p>Budget full-size Brother machines</p>
+                <p>(HC14, LS14s, LX3817, etc)</p></span>
+              </div> 
+              </a>
+
+              <a href="https://www.google.com/search?q=Singer+sewing+machine+4423" target="_blank" class="recommended-item">
+              <img src="https://singerstore.co.uk/cdn/shop/files/HD-30637_HD4423_FrontAngle_b1a7f526-610c-42ed-85f9-5203e83804a2.jpg" />
+              <div class="info"> 
+                <h5>Singer 4423</h5>
+                <span><p>£270</p>
+                <p>Not recommended for beginners</p></span>
+              </div> 
+              </a>
+        </div>
+      </div>
+
     </section>
 
     <!-- SHOP PAGE (Placeholder) -->
